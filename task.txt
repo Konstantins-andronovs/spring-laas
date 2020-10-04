@@ -1,0 +1,56 @@
+Loan Amount Approval Service
+
+Create a RESTful service that would enable loan preparators to send loan contracts to
+loan managers for approval. Loan preparator must specify the customer’s ID
+and the amount that customer wants to loan.
+Loan preparator must also specify which managers need to approve it .
+After the specified managers have added their approvals the contract
+will be automatically sent to the customer.
+
+Create a simple service that would allow to make the following actions:
+
+1. Creating a loan amount approval request with the following properties:
+* customer’s ID (text, must be in a pattern XX-XXXX-XXX where X is either number or a letter)
+* loan amount (number)
+* approvers (list of usernames (text), up to 3)
+
+2. Making a decision that has at least the following inputs:
+* loan manager’s username
+* customer’s ID
+
+4. Return statistics of contracts that were sent to the customers during a period
+    that is configured in the application (default is 60 seconds). Endpoint must return the following:
+* count -  count of sent contracts
+* sum - sum of all the loan amounts
+* avg - average loan amount
+* max - biggest loan amount
+* min - smallest loan amount
+
+Notes:
+* There can be only one pending loan request for one customer
+* There can be multiple contracts sent to the service at the same time.
+* Think about memory usage and performance when choosing collections
+* Front-end is not required and will not give any extra points besides
+    better demonstration of the working service.
+
+Technical requirements:
+* Must use Gradle
+* Written in Java
+* Demonstrates object oriented paradigm
+* Follows clean code principles
+* Must be production ready
+* Service should not use any databases (in-memory nor any persistent ones), only Java collections.
+* Request input validations must be present and correct error messages
+    returned with correct HTTP status code
+* Code must be covered with unit tests
+
+
+Bonus points:
+* API tests
+* Simple docker container for running the service
+
+
+Good day,
+Thank you for the task, I came up with some questions related to the projects.
+    1.  Regarding loan bulk creation, is it required to have cascade effect in case one of the loan contracts fails to create or it should fail silently with others successfully created.    2. Do you expect to have some authentication made for the REST service, to logically separate the loan broker role and manager ?
+    3.
