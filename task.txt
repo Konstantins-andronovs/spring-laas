@@ -48,9 +48,3 @@ Technical requirements:
 Bonus points:
 * API tests
 * Simple docker container for running the service
-
-
-Good day,
-Thank you for the task, I came up with some questions related to the projects.
-    1.  Regarding loan bulk creation, is it required to have cascade effect in case one of the loan contracts fails to create or it should fail silently with others successfully created.    2. Do you expect to have some authentication made for the REST service, to logically separate the loan broker role and manager ?
-    3.
